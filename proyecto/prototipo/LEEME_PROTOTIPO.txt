@@ -1,0 +1,5 @@
+PROTOTIPO (API + página web)
+1) pip install -r requirements.txt
+2) python entrenar_modelo.py     (crea modelos.joblib; requiere ../datos_limpios.csv)
+3) python app.py
+4) Abrir http://127.0.0.1:5000 en el navegador.

@@ -1,0 +1,357 @@
+{
+ "registros_originales": 20223,
+ "nulos": {
+  "ANIO": 0,
+  "FECHA": 0,
+  "SEXO": 1,
+  "ESPECIALIDAD": 2,
+  "ESTADO": 0,
+  "PESO": 40,
+  "GRUPO_PESO": 40,
+  "TALLA": 40,
+  "CCO": 1,
+  "UPS": 1,
+  "TIPOPARTO": 1,
+  "BARRIO_COD": 19,
+  "BARRIO": 19
+ },
+ "registros_limpios": 20089,
+ "eliminados": 134,
+ "distribucion_tipo_parto": {
+  "PARTO": 14988,
+  "CESAREA": 5101
+ },
+ "peso_describe": {
+  "count": 20089.0,
+  "mean": 3151.3,
+  "std": 412.5,
+  "min": 500.0,
+  "25%": 2900.0,
+  "50%": 3150.0,
+  "75%": 3405.0,
+  "max": 4930.0
+ },
+ "talla_describe": {
+  "count": 20089.0,
+  "mean": 49.7,
+  "std": 2.1,
+  "min": 25.0,
+  "25%": 49.0,
+  "50%": 50.0,
+  "75%": 51.0,
+  "max": 59.0
+ },
+ "por_anio": {
+  "2020": 7347,
+  "2021": 5185,
+  "2022": 3522,
+  "2023": 1480,
+  "2024": 1420,
+  "2025": 1135
+ },
+ "cesarea_por_anio_pct": {
+  "2020": 24.1,
+  "2021": 25.4,
+  "2022": 24.6,
+  "2023": 17.8,
+  "2024": 32.6,
+  "2025": 36.9
+ },
+ "svm": {
+  "E1_lineal": {
+   "columnas": [
+    "PESO_G",
+    "TALLA",
+    "SEXO_N",
+    "ESTADO_N",
+    "UPS_N",
+    "ANIO_N"
+   ],
+   "kernel": "linear",
+   "class_weight": null,
+   "accuracy": 0.7461,
+   "precision_cesarea": 0.0,
+   "recall_cesarea": 0.0,
+   "f1_cesarea": 0.0,
+   "cm": [
+    [
+     2998,
+     0
+    ],
+    [
+     1020,
+     0
+    ]
+   ],
+   "n_train": 16071,
+   "n_test": 4018
+  },
+  "E2_rbf": {
+   "columnas": [
+    "PESO_G",
+    "TALLA",
+    "SEXO_N",
+    "ESTADO_N",
+    "UPS_N",
+    "ANIO_N"
+   ],
+   "kernel": "rbf",
+   "class_weight": null,
+   "accuracy": 0.7461,
+   "precision_cesarea": 0.0,
+   "recall_cesarea": 0.0,
+   "f1_cesarea": 0.0,
+   "cm": [
+    [
+     2998,
+     0
+    ],
+    [
+     1020,
+     0
+    ]
+   ],
+   "n_train": 16071,
+   "n_test": 4018
+  },
+  "E3_rbf_balanceado": {
+   "columnas": [
+    "PESO_G",
+    "TALLA",
+    "SEXO_N",
+    "ESTADO_N",
+    "UPS_N",
+    "ANIO_N"
+   ],
+   "kernel": "rbf",
+   "class_weight": "balanced",
+   "accuracy": 0.5859,
+   "precision_cesarea": 0.3217,
+   "recall_cesarea": 0.5696,
+   "f1_cesarea": 0.4112,
+   "cm": [
+    [
+     1773,
+     1225
+    ],
+    [
+     439,
+     581
+    ]
+   ],
+   "n_train": 16071,
+   "n_test": 4018
+  },
+  "E4_rbf_balanceado_especialidad": {
+   "columnas": [
+    "PESO_G",
+    "TALLA",
+    "SEXO_N",
+    "ESTADO_N",
+    "UPS_N",
+    "ANIO_N",
+    "ESP_N"
+   ],
+   "kernel": "rbf",
+   "class_weight": "balanced",
+   "accuracy": 0.6451,
+   "precision_cesarea": 0.4155,
+   "recall_cesarea": 0.9784,
+   "f1_cesarea": 0.5833,
+   "cm": [
+    [
+     1594,
+     1404
+    ],
+    [
+     22,
+     998
+    ]
+   ],
+   "n_train": 16071,
+   "n_test": 4018
+  }
+ },
+ "pct_bajo_peso": 4.04,
+ "svm_bp": {
+  "B1_lineal": {
+   "columnas": [
+    "TALLA",
+    "SEXO_N",
+    "CESAREA",
+    "ESP_N",
+    "UPS_N",
+    "ANIO_N"
+   ],
+   "kernel": "linear",
+   "class_weight": null,
+   "accuracy": 0.9624,
+   "precision": 0.8667,
+   "recall": 0.0802,
+   "f1": 0.1469,
+   "cm": [
+    [
+     3854,
+     2
+    ],
+    [
+     149,
+     13
+    ]
+   ]
+  },
+  "B2_rbf": {
+   "columnas": [
+    "TALLA",
+    "SEXO_N",
+    "CESAREA",
+    "ESP_N",
+    "UPS_N",
+    "ANIO_N"
+   ],
+   "kernel": "rbf",
+   "class_weight": null,
+   "accuracy": 0.9627,
+   "precision": 1.0,
+   "recall": 0.0741,
+   "f1": 0.1379,
+   "cm": [
+    [
+     3856,
+     0
+    ],
+    [
+     150,
+     12
+    ]
+   ]
+  },
+  "B3_rbf_balanceado": {
+   "columnas": [
+    "TALLA",
+    "SEXO_N",
+    "CESAREA",
+    "ESP_N",
+    "UPS_N",
+    "ANIO_N"
+   ],
+   "kernel": "rbf",
+   "class_weight": "balanced",
+   "accuracy": 0.8813,
+   "precision": 0.228,
+   "recall": 0.8148,
+   "f1": 0.3563,
+   "cm": [
+    [
+     3409,
+     447
+    ],
+    [
+     30,
+     132
+    ]
+   ]
+  },
+  "B4_rbf_balanceado_sin_talla": {
+   "columnas": [
+    "SEXO_N",
+    "CESAREA",
+    "ESP_N",
+    "UPS_N",
+    "ANIO_N"
+   ],
+   "kernel": "rbf",
+   "class_weight": "balanced",
+   "accuracy": 0.6573,
+   "precision": 0.0569,
+   "recall": 0.4815,
+   "f1": 0.1018,
+   "cm": [
+    [
+     2563,
+     1293
+    ],
+    [
+     84,
+     78
+    ]
+   ]
+  }
+ },
+ "reg": {
+  "R1_simple": {
+   "columnas": [
+    "TALLA"
+   ],
+   "r2": 0.4772,
+   "rmse": 290.9,
+   "mae": 218.9,
+   "coef": [
+    140.04
+   ],
+   "intercepto": -3816.2
+  },
+  "R2_multiple": {
+   "columnas": [
+    "TALLA",
+    "SEXO_N",
+    "CESAREA",
+    "ESP_N"
+   ],
+   "r2": 0.4872,
+   "rmse": 288.1,
+   "mae": 216.5,
+   "coef": [
+    139.14,
+    21.11,
+    110.08,
+    -31.16
+   ],
+   "intercepto": -3790.8
+  }
+ },
+ "kmeans_inercia": {
+  "2": 128.2,
+  "3": 89.9,
+  "4": 69.0,
+  "5": 54.6,
+  "6": 46.5,
+  "7": 41.0,
+  "8": 36.8
+ },
+ "kmeans_silhouette": {
+  "2": 0.4407,
+  "3": 0.3983,
+  "4": 0.3951,
+  "5": 0.3585,
+  "6": 0.3345,
+  "7": 0.3443,
+  "8": 0.3246
+ },
+ "kmeans_perfiles": [
+  {
+   "CLUSTER": 0,
+   "n": 10198,
+   "peso_medio": 3094.44,
+   "talla_media": 49.74,
+   "pct_cesarea": 23.36,
+   "pct_muerto": 0.18
+  },
+  {
+   "CLUSTER": 1,
+   "n": 6019,
+   "peso_medio": 3604.55,
+   "talla_media": 51.41,
+   "pct_cesarea": 30.5,
+   "pct_muerto": 0.13
+  },
+  {
+   "CLUSTER": 2,
+   "n": 3872,
+   "peso_medio": 2596.73,
+   "talla_media": 47.17,
+   "pct_cesarea": 22.8,
+   "pct_muerto": 2.2
+  }
+ ]
+}

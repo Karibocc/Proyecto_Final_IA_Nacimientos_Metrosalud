@@ -1,0 +1,2 @@
+Ejecutar: pip install pandas scikit-learn matplotlib seaborn ; python proyecto_nacimientos_metrosalud.py
+(el CSV datos_originales.csv debe estar en la misma carpeta). Genera datos_limpios.csv, figuras/ y resultados.json.
